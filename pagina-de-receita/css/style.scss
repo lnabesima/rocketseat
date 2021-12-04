@@ -1,0 +1,133 @@
+@use 'sass:math';
+//Functions
+@function calculateRem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+@mixin flex-column {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+//variables
+$background-color: #eaeaea;
+$recipe-background: #ffffff;
+$title-color: #1b1b1b;
+$img-caption-color: #8f8f8f;
+$text-color: #39393a;
+
+$title-size: calculateRem(28px);
+$subtitle-size: calculateRem(20px);
+$text-size: calculateRem(16px);
+$img-caption-size: calculateRem(12px);
+
+$font: 'Roboto', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+main {
+  background-color: $background-color;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  //typograhy
+  font-family: $font;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: $title-size;
+    color: $title-color;
+    text-align: center;
+    margin-bottom: calculateRem(20px);
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+
+  h2,
+  h3 {
+    font-size: $subtitle-size;
+    color: $title-color;
+    margin-bottom: calculateRem(10px);
+  }
+
+  ul li,
+  ol li {
+    list-style-position: inside;
+    line-height: calculateRem(26px);
+  }
+
+  ul li,
+  ol li,
+  p {
+    font-size: $text-size;
+    color: $text-color;
+  }
+
+  section {
+    background-color: $recipe-background;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: calculateRem(25px);
+    margin-bottom: calculateRem(25px);
+    padding: 25px;
+
+    figure {
+      img {
+        width: 100%;
+        height: calculateRem(250px);
+        object-fit: cover;
+        object-position: 0 75%;
+        border-radius: 10px;
+      }
+      figcaption {
+        font-size: $img-caption-color;
+        color: $img-caption-color;
+        text-align: right;
+      }
+    }
+
+    article {
+      @include flex-column;
+      margin-bottom: calculateRem(20px);
+
+      p {
+        text-align: center;
+        padding: calculateRem(10px) 0;
+      }
+      .ingredientes {
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        gap: calculateRem(50px);
+        align-items: end;
+      }
+
+      .receita {
+        h3 {
+          margin-top: calculateRem(20px);
+        }
+      }
+    }
+  }
+
+  footer {
+    margin: calculateRem(20px);
+    text-align: center;
+  }
+}
