@@ -1,0 +1,141 @@
+@use 'sass:math';
+
+//Functions
+@function calculateRem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+/*----------------------------------------------------------------------*/
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg {
+  position: relative;
+  overflow: hidden;
+  &__blackbox {
+    width: calculateRem(720px);
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__img {
+    height: 100vh;
+    z-index: -1;
+    transform: translateX(45%);
+  }
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  &__logo {
+    width: calculateRem(398px);
+    height: calculateRem(94px);
+    margin-top: calculateRem(50px);
+    margin-left: calculateRem(30px);
+  }
+}
+
+.main {
+  margin-top: calculateRem(92px);
+  margin-left: calculateRem(37px);
+
+  h2 {
+    color: #08c15f;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  h3,
+  p {
+    color: white;
+    font-size: 14px;
+  }
+
+  h2,
+  h3 {
+    margin-bottom: calculateRem(9px);
+  }
+
+  h3 {
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 138.7%;
+  }
+}
+
+.form {
+  margin-left: calculateRem(37px);
+  margin-top: calculateRem(50px);
+
+
+  &__label {
+    font-family: Spartan, sans-serif;
+    color: #a8a8a8;
+    font-weight: 700;
+    line-height: 138.7%;
+    font-size: 14px;
+  }
+
+  &__input{
+    width: calculateRem(798px);
+    background-color: #04D361;
+    align-items: center;
+    box-shadow: 4px 10px 15px rgba(0, 0, 0, 0.5);
+    margin-top: calculateRem(17px);
+    margin-bottom: calculateRem(52px);
+
+    &-proper{
+      width: calc(100% - calculateRem(53px));
+      border: none;
+      height: calculateRem(48px);
+      margin-left: calculateRem(5px);
+      padding-left: calculateRem(10px);
+    }
+  }
+  
+  &__submit{
+    align-self: center;
+    width: calculateRem(48px);
+    height: calculateRem(48px);
+    padding-top: 5px;
+    border: none;
+    background-color:#8257E5;
+    cursor: pointer;
+  }
+
+  &__ignore {
+    color: #8257E5;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+    img {
+      filter: invert(45%) sepia(91%) saturate(3580%) hue-rotate(237deg) brightness(91%) contrast(96%);
+    }
+  }
+}

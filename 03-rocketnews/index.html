@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>RocketNews</title>
+  </head>
+  <body>
+    <main>
+      <div class="bg flex">
+        <div class="bg__blackbox"></div>
+        <img
+          src="./assets/read_news.jpg"
+          alt="Homem escrevendo algo em um notebook com uma planta e uma estante com livros ao fundo."
+          class="bg__img"
+        />
+      </div>
+
+      <div class="container">
+        <nav class="title">
+          <img
+            src="./assets/logo.svg"
+            alt="Logo da RocketNews"
+            class="title__logo"
+          />
+        </nav>
+
+        <section class="main">
+          <h2 class="main__caption">
+            atualize ideias e informações em minutos.
+          </h2>
+          <h3 class="main_3rdheading">
+            tudo que você precisa saber para começar seu dia bem e informado
+          </h3>
+          <p class="main__paragraph">
+            noticias sobre o universo Rocketseat, e tudo o que precisa para
+            começar o dia melhor.
+          </p>
+          <p class="main__paragraph">perfeito para se preparar para codar ☕</p>
+        </section>
+
+        <section class="form">
+          <form action="">
+            <label for="email" class="form__label">Insira seu e-mail:</label>
+            <div class="form__input flex">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form__input-proper"
+                placeholder="oi@rocketseat.com.br"
+                required
+              />
+              <button type="submit" class="form__submit">
+                <img src="./assets/send.svg" />
+              </button>
+            </div>
+          </form>
+
+          <a href="#" class="form__ignore">
+            deixe-me ler primeiro
+            <img src="./assets/arrow-right.svg" alt="Seta para a direita" />
+          </a>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
